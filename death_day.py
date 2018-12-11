@@ -1,5 +1,6 @@
 
 import datetime
+import random
 
 AVERAGE_LIFESPAN = 80
 
@@ -34,7 +35,7 @@ if ask_yes_or_not('¿Bebes?'):
 if not ask_yes_or_not('¿Haces deporte?'):
     year_lost += SEDENTARY_PENALIZATION
 
-lefespan = AVERAGE_LIFESPAN - year_lost
+lefespan = AVERAGE_LIFESPAN * (random.randint(80, 100)/100) - year_lost
 death_day = birth_date + datetime.timedelta(days=lefespan*365)
 days_to_death = death_day - datetime.datetime.now()
 
